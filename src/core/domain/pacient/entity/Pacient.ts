@@ -12,7 +12,7 @@ type PacientProps = {
   birthDate: Date;
   gender: Gender;
   phone: string;
-  email?: Email;
+  email: Email;
   createdAt?: Date;
 };
 
@@ -55,7 +55,7 @@ export class Pacient extends Entity<PacientProps> {
     return this.props.phone;
   }
 
-  get email(): Email | undefined {
+  get email(): Email {
     return this.props.email;
   }
 
