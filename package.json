@@ -32,6 +32,8 @@
     "eslint": "^9.29.0",
     "eslint-config-prettier": "^10.1.5",
     "eslint-plugin-prettier": "^5.4.1",
+    "pino": "^9.7.0",
+    "pino-prettier": "^3.0.1-dev",
     "prettier": "^3.5.3",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
