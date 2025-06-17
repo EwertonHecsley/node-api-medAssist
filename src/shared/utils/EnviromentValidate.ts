@@ -7,6 +7,7 @@ export default class EnviromentValidator {
       NODE_ENV: z.enum(['development', 'production', 'test']),
       PORT: z.string().regex(/^\d+$/).transform(Number),
       OPEN_AI_KEY: z.string(),
+      DATABASE_URL: z.string().url(),
     })
     .passthrough();
 

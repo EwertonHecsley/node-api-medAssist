@@ -37,6 +37,14 @@ export class MedicalReport extends Entity<MedicalReportProps> {
     return new Date(this.props.createdAt ?? new Date());
   }
 
+  get doctorId(): Identity {
+    return this.props.doctorId;
+  }
+
+  get pacientId(): Identity {
+    return this.props.pacientId;
+  }
+
   updateOriginalText(text: string): void {
     if (!text || text.trim().length < 2) {
       throw new BadRequest('Report must have at least 2 characters.');

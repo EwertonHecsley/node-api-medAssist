@@ -1,0 +1,56 @@
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Gender {
+  M
+  F
+  O
+}
+
+model Pacient {
+  id          String        @id @default(uuid()) @db.Uuid
+  name        String
+  susNumber   String        @unique
+  cpf         String        @unique
+  birthDate   DateTime      @default(now()) @db.Timestamp()
+  gender      Gender
+  phone       String
+  email       String        @unique
+  createdAt   DateTime      @default(now()) @db.Timestamp()
+  Appointment Appointment[]
+
+  @@map("pacients")
+}
+
+model Doctor {
+  id          String        @id @default(uuid()) @db.Uuid
+  name        String
+  specialty   String
+  docNumber   String        @unique
+  email       String        @unique
+  createdAt   DateTime      @default(now()) @db.Timestamp()
+  Appointment Appointment[]
+
+  @@map("doctors")
+}
+
+model Appointment {
+  id           String   @id @default(uuid()) @db.Uuid
+  pacientId    String   @db.Uuid
+  doctorId     String   @db.Uuid
+  originalText String
+  improvedText String
+  createdAt    DateTime @default(now()) @db.Timestamp()
+
+  pacient Pacient @relation(fields: [pacientId], references: [id])
+  doctor  Doctor  @relation(fields: [doctorId], references: [id])
+
+  @@map("appointments")
+}
