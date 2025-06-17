@@ -34,7 +34,7 @@ export class MedicalReport extends Entity<MedicalReportProps> {
   }
 
   get createdAt(): Date {
-    return new Date(this.props.createdAt!);
+    return new Date(this.props.createdAt ?? new Date());
   }
 
   updateOriginalText(text: string): void {
