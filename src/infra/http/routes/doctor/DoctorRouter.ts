@@ -11,5 +11,8 @@ export class DoctorRoutes {
       preHandler: validateBody(schemaCreateDoctortDto),
       handler: this.controller.store.bind(this.controller),
     });
+    app.get('/v1/doctor', {
+      handler: this.controller.list.bind(this.controller),
+    });
   }
 }
