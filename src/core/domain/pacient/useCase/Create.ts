@@ -29,6 +29,9 @@ export class CreatePacientUseCase {
     const emailExists = await this.pacientRepository.findByEmail(email);
     if (emailExists) return left(new BadRequest('Email is alredy.'));
 
+    const susNumberExists = await this.pacientRepository.findBySusNumber(data.susNumber);
+    if (susNumberExists) return left(new BadRequest('SUS Number is alredy.'));
+
     const result = PacientFactory.fromRequest(data);
     if (!result.valid) return left(result.errors!);
 

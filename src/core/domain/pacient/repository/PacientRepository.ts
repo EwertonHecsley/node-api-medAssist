@@ -6,4 +6,5 @@ export abstract class PacientRepository {
   abstract findByEmail(email: string): Promise<Pacient | null>;
   abstract findById(id: string): Promise<Pacient | null>;
   abstract findAll(): Promise<Pacient[]>;
+  abstract findBySusNumber(susNumber: string): Promise<Pacient | null>;
 }

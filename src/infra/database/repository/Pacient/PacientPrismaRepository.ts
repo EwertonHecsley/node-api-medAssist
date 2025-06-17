@@ -31,4 +31,9 @@ export class PacientPrismaRepository implements PacientRepository {
     const result = await this.prisma.pacient.findFirst({ where: { email } });
     return result ? PacientPrismaMapper.toDomain(result) : null;
   }
+
+  async findBySusNumber(susNumber: string): Promise<Pacient | null> {
+    const result = await this.prisma.pacient.findFirst({ where: { susNumber } });
+    return result ? PacientPrismaMapper.toDomain(result) : null;
+  }
 }
