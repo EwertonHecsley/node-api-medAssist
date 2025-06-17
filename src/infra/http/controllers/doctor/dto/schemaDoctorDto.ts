@@ -1,7 +1,5 @@
-import { Gender } from '@/core/domain/pacient/enum/Gender';
 import { z } from 'zod';
 
-const cpfRegex = /^\d{3}\.?\d{3}\.?\d{3}-?\d{2}$/;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export const schemaCreateDoctortDto = z.object({
