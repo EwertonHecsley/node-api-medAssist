@@ -36,6 +36,7 @@
     "pino": "^9.7.0",
     "pino-prettier": "^3.0.1-dev",
     "prettier": "^3.5.3",
+    "prisma": "^6.9.0",
     "tsx": "^4.20.3",
     "typescript": "^5.8.3"
   }

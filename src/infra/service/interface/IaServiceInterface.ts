@@ -1,3 +1,3 @@
 export interface IaServiceInterface {
-    improveText(text: string): Promise<string>;
+  improveText(text: string): Promise<string>;
 }
