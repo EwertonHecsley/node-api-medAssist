@@ -11,7 +11,7 @@ export class PacientRoutes {
       preHandler: validateBody(schemaCreatePacientDto),
       handler: this.controller.store.bind(this.controller),
     });
-    app.get('v1/pacient', {
+    app.get('/v1/pacient', {
       handler: this.controller.list.bind(this.controller),
     });
   }
