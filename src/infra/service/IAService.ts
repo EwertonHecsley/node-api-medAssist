@@ -2,7 +2,7 @@ import { OpenAI } from 'openai';
 import { IaServiceInterface } from './interface/IaServiceInterface';
 
 export class OpenIAService implements IaServiceInterface {
-  private readonly openAI = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+  private readonly openAI = new OpenAI({ apiKey: process.env.OPEN_AI_KEY });
 
   async improveText(originalText: string): Promise<string> {
     const prompt = `Melhore a clareza e a gramática do seguinte laudo médico sem alterar o conteúdo técnico:\n\n"${originalText}"`;
